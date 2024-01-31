@@ -157,7 +157,8 @@ Analyze the Python code `python-to-bq.py` and run it with the command `python py
 Additionally to the Connect Four algorithm, this code has these elements:
 
 ✔️ `determine_winner_from_file(file_name)` function takes a `file_name` as input and returns a list of game results
-the code reads the txt file from the bucket
+
+✔️ the code reads the txt file from the bucket
 
 ✔️ it iterates over the `game_results` list and prints the game number, winner ID, and loser ID in a tabular format
   
