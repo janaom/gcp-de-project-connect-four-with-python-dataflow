@@ -169,6 +169,9 @@ the code reads the txt file from the bucket
 
 The game results are loaded into the BigQuery table.
 
+![image](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/6f1571f8-0cf1-4707-ab19-e72b0c6da60d)
+
+
 To order the data by the `game_number` column, you can use the `ORDER BY` clause.
 
 ```SQL
@@ -178,6 +181,9 @@ ORDER BY game_number;
 ```
 
 You'll be able to view the results of all 88 games.
+
+![image](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/e99e79c9-c1aa-447d-85b8-df2df84ca78f)
+
 
 
 # Beam code
@@ -388,6 +394,9 @@ python dataflow.py \
   --table project_id:dataset.table
 ```
 Here is an example: `python dataflow-job.py --project connect-four-408317 --region us-central1 --bucket connect-four-us --file matchdata.txt --table connect-four-408317:connect_four.dataflow_results`
+
+![image](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/c01a49d3-7cce-4f4e-b211-b719b5d3b361)
+
 
 ❗️ It may fail with the comment: ''The zone 'projects/connect-four-408317/zones/us-central1-b' does not have enough resources available to fulfill the request. Try a different zone, or try again later.'' Just try a different zone.
 
