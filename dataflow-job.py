@@ -1,7 +1,6 @@
 import apache_beam as beam
 from apache_beam.io.gcp.bigquery import WriteToBigQuery
 from google.cloud import storage
-import json
 import argparse
 
 #Function to find the next empty row in a column of a grid
