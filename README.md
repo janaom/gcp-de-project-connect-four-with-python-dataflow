@@ -38,7 +38,7 @@ I use GCP services for this project.
 
 ✉️Email Scheduler: it is used to schedule the delivery of Looker reports via email. This feature ensures regular and automated delivery of the Connect Four game reports to the intended recipients, keeping them updated on the latest analysis and insights.
 
-# Connect Four rules
+# 📢 Connect Four rules
 
 Before we get to the task, let's review the rules of Connect Four. In this game, two players take turns strategically placing red and black chips on a 6x7 grid. Each player is assigned a color, and red always goes first. The goal is to be the first player to connect four of their chips in a horizontal, vertical, or diagonal line on the grid.
 
@@ -70,7 +70,7 @@ player_1,player_6 R3,B3,R4,B6,R1,B5,R6,B3,R4,B4,R6,B1,R5,B7,R6,B2,R2,B7,`R1,B2,R
 
 ![20240126_185845](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/ac44a70e-987f-4079-8356-9d9168da8de6)
 
-# Connect Four algorithm
+# 🕹️ Connect Four algorithm
 
 First, let's discuss the Connect Four algorithm.
 
@@ -146,7 +146,7 @@ def determine_winner(moves_list):
   
 - The `determine_winner` function takes a list of moves as input and determines the winner of each game. It initializes an empty grid and extracts the player IDs from the first element of each moves list. It then iterates through the moves, updating the grid with the corresponding player's token. After each move, it checks if a winning condition is met using the `check_winner` function. If a winner is found, it appends a tuple of the winning player's ID and the opponent's ID to the `game_results` list. Finally, it returns the `game_results` list, which contains the winners for each game in the moves list.
 
-# Python code
+# 🐍 Python code
 
 Upload matchdata.txt file to the bucket.
 
@@ -187,7 +187,7 @@ You'll be able to view the results of all 88 games.
 
 
 
-# Beam code
+# <img width="40" alt="image" src="https://beam.apache.org/images/mascot/beam_mascot_500x500.png"> Beam code
 
 Let's highlight the primary distinction between Beam and Python code.
 
@@ -222,7 +222,7 @@ FROM your_table_name
 ORDER BY game_number;
 ```
 
-# Dataflow job
+# 🌊 Dataflow job
 
 The last step is to adjust Beam code to the Dataflow job. In this code, the assumption is that the dataset already exists in BigQuery. The code has specific imports and details.
 
@@ -414,7 +414,7 @@ To see an example, run: `python dataflow.py --help`
 ![image](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/b497f157-10c5-48ee-a193-1f8967a71dbf)
 
 
-# A step-by-step guide to data querying
+# 📃 A step-by-step guide to data querying
 
 And now that we have all the results stored in BigQuery, let's return to our primary objective and proceed with creating the main table.
 
@@ -569,7 +569,7 @@ ORDER BY player_rank
 Great job! With the `connect_four_performance_summary`, we now have all the information about the players' performance in a Connect Four game.
 
 
-# Looker
+# 📊 Looker
 
 In BigQuery export your data to the Looker Studio.
 
@@ -580,7 +580,7 @@ Create a dashboard. Here is my example.
 
 ![20240128_200142](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/e3956434-cf9f-4873-ba36-4b58aafca133)
 
-# Send the results via email
+# 📧 Send the results via email
 
 Click on Share in Looker and Schedule delivery. You can filter the results (use Filters) and send them to each player based on the player_id.
 
@@ -595,7 +595,7 @@ The participats will receive the PDF version of the report and the link to the i
 
 
 
-# Send the results to the Slack
+# 💬 Send the results to the Slack
 
 Go to the https://api.slack.com
 
