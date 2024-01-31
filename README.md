@@ -514,6 +514,9 @@ FROM player_stats
 ORDER BY player_rank;
 ```
 
+![image](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/af20de7f-fd41-4835-bff1-9dba818a858a)
+
+
 Just as example, you will get different results with `ROW_NUMBER()` function:
 ```SQL
 <...>
@@ -532,29 +535,29 @@ Now, let's create a new table `connect_four_performance_summary`.
 
 ```SQL
 CREATE TABLE connect_four.connect_four_performance_summary AS (
-  WITH all_players AS (
-    SELECT winner_id AS player_id, 'won' AS Result
-    FROM your_table_name
-    UNION ALL
-    SELECT loser_id AS player_id, 'lost' AS Result
-    FROM your_table_name
-  ), player_stats AS (
-    SELECT player_id, 
-           COUNT(*) AS games_played,
-           COUNT(CASE WHEN Result = 'won' THEN 1 END) AS won,
-           COUNT(CASE WHEN Result = 'lost' THEN 1 END) AS lost,
-           ROUND((COUNT(CASE WHEN Result = 'won' THEN 1 END) / COUNT(*)) * 100, 2) AS win_percentage
-    FROM all_players
-    GROUP BY player_id
-  )
-  SELECT ROW_NUMBER() OVER (ORDER BY win_percentage DESC) AS player_rank,
-         player_id,
-         games_played,
-         won,
-         lost,
-         win_percentage
-  FROM player_stats
-  ORDER BY player_rank
+WITH all_players AS (
+  SELECT winner_id AS player_id, 'won' AS Result
+  FROM your_table_name
+  UNION ALL
+  SELECT loser_id AS player_id, 'lost' AS Result
+  FROM your_table_name
+), player_stats AS (
+  SELECT player_id,
+         COUNT(*) AS games_played,
+         COUNT(CASE WHEN Result = 'won' THEN 1 END) AS won,
+         COUNT(CASE WHEN Result = 'lost' THEN 1 END) AS lost,
+         ROUND((COUNT(CASE WHEN Result = 'won' THEN 1 END) / COUNT(*)) * 100, 2) AS win_percentage
+  FROM all_players
+  GROUP BY player_id
+)
+SELECT RANK() OVER (ORDER BY win_percentage DESC) AS player_rank,
+       player_id,
+       games_played,
+       won,
+       lost,
+       win_percentage
+FROM player_stats
+ORDER BY player_rank
 );
 ```
 
