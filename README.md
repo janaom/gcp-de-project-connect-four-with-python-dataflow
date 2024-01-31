@@ -399,7 +399,7 @@ Here is an example: `python dataflow-job.py --project connect-four-408317 --regi
 ![image](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/c01a49d3-7cce-4f4e-b211-b719b5d3b361)
 
 
-❗️ My first job failed with the comment: ''The zone 'projects/connect-four-408317/zones/us-central1-b' does not have enough resources available to fulfill the request. Try a different zone, or try again later.'' So I changed us-central1 to us-east1.
+❗️ My first job failed with the comment: 'The zone 'projects/connect-four-408317/zones/us-central1-b' does not have enough resources available to fulfill the request. Try a different zone, or try again later.' So I changed us-central1 to us-east1.
 
 You will see a simple pipeline. And then a table in BigQuery.
 
