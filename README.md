@@ -429,7 +429,7 @@ In our current schema we have: `game_number`, `winner_id`, `loser_id` fields.
 ![image](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/f13c8b20-e1ed-4059-a359-781a96219d2c)
 
 
-Let's combine the winner_id and loser_id columns into a single column called player_id. Then, the main query selects the player_id column from the subquery and uses the COUNT(*) function to calculate the number of games played by each player.
+Let's combine the `winner_id` and `loser_id` columns into a single column called `player_id`. Then, the main query selects the `player_id` column from the subquery and uses the `COUNT(*)` function to calculate the number of `games played` by each player.
 
 ```SQL
 SELECT player_id, COUNT(*) AS games_played
@@ -446,7 +446,7 @@ GROUP BY player_id
 ![image](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/cc1d06e0-794c-4604-97db-39734f08073b)
 
 
-Then, let's calculate the number of games won, and games  lost for each player.
+Then, let's calculate the number of games `won`, and games `lost` for each player.
 
 ```SQL
 WITH all_players AS (
