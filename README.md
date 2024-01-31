@@ -212,7 +212,7 @@ p = beam.Pipeline()
 
 ✔️ the `WriteToBigQuery` transform is  applied to the PCollection of game results. It specifies the BigQuery  table to write to, the schema of the table, the write disposition  (appending to the existing table), and the temporary location in Google  Cloud Storage.
 
-In this case the code assumes that the dataset already exists in BigQuery. You can create a dataset by running `bq mk dataset your_dataset`.
+In this case the code assumes that the dataset already exists in BigQuery. 
 
 To execute the code, simply run the command `python beam-to-bq.py`. Executing this command will yield identical results to running the Python code. To verify all game results in a sequential order, run the corresponding SQL query.
 
