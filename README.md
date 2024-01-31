@@ -561,7 +561,8 @@ ORDER BY player_rank
 );
 ```
 
-![image](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/45af892a-77ad-451b-aa9e-1680ad4b6e65)
+![image](https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/c1ca3bcd-fc4c-4bee-83aa-e45b9425d866)
+
 
 
 Great job! With the `connect_four_performance_summary`, we now have all the information about the players' performance in a Connect Four game.
