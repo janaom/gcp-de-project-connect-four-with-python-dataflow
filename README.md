@@ -632,7 +632,7 @@ else:
     print("Channel not found.")
 ```
 
-Adjust this code to your needs: add channel_id, token, link to your csv file, initial_comment
+Adjust this code to your needs: add `channel_id`, token, link to your csv file, `initial_comment`
 
 ```python
 import requests
