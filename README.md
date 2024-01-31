@@ -488,7 +488,7 @@ GROUP BY player_id;
 
 Here, the `player_rank` column added, showing the rank of each player based on win percentage, along with other player statistics.
 
-```
+```SQL
 WITH all_players AS (
   SELECT winner_id AS player_id, 'won' AS Result
   FROM your_table_name
