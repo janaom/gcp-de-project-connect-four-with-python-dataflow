@@ -52,7 +52,7 @@ player_2, player_3
 R1,B2,R3,B1,R4,...
 ```
 
-In the Connect Four matches, the first player listed always plays as red, while the second player always plays as black. The moves are represented using a combination of the color and the column number: `<color><column>`. In the first match above, player_0 makes the move "R1" which denotes that they place their chip in the first column. Since there are no chips in that column, it falls to the bottom. player_1 (black) responds by placing their chip in the first column as well. However, since there's already a red chip in that column, the black chip ends up on top of the red chip.
+In the Connect Four matches, the first player listed always plays as red, while the second player always plays as black. The moves are represented using a combination of the color and the column number: `<color><column>`. In the first match above, player_0 makes the move "R1" which denotes that they place their chip in the first column. Since there are no chips in that column, it falls to the bottom. Player_1 (black) responds by placing their chip in the first column as well. However, since there's already a red chip in that column, the black chip ends up on top of the red chip.
 
 Each game contains two rows:
 
